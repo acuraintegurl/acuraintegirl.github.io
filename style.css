@@ -4,8 +4,25 @@
   --paper: #fffcf8;
   --highlight: rgb(255, 217, 0);
   --periwinkle: #c2d5f1;
-  --lilac: #d6cffb;
+  --pink: #ffbeeb;
   --sunflower: #fdefa1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+}
+body {
+  font-family: "Roobert", Helvetica, sans-serif;
+  color: var(--stone);
+}
+em {
+  font-family: "Roobert", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
 }
 @font-face {
   font-family: "Roobert";
@@ -16,91 +33,107 @@
   font-family: "Tobias";
   src: url("fonts/Tobias-Light.woff2") format("woff2");
 }
-
-body {
-  font-family: "Roobert", Helvetica, sans-serif;
-  color: var(--stone);
+i {
+  margin-right: 10px;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: inherit;
-}
-
 h1,
 h2 {
-  font-size: 72px;
-  font-weight: 500;
+  font-size: 64px;
 }
-
-em {
-  font-style: normal;
-  font-weight: 600;
-}
-
 h3 {
-  font-size: 40px;
+  font-size: 48px;
 }
 
-i {
-  padding: 10px;
+footer {
+  background-color: rgb(240, 240, 240);
+  bottom: 0;
+}
+.about,
+.contact {
+  position: relative;
+  justify-content: center;
+  margin-top: 160px;
+  margin-bottom: 160px;
 }
 
+.about-me {
+  display: flex;
+  justify-content: center;
+}
+.about-body {
+  font-size: large;
+}
+.about-me-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.about-profile-pic {
+  padding: 20px;
+  width: 100%;
+}
 #background {
   height: 100vh;
   background: radial-gradient(
-      30% 40% at 50% 30%,
+      30% 40% at 50% 45%,
       var(--periwinkle) 0%,
       transparent
     ),
-    radial-gradient(20% 40% at 30% 55%, var(--lilac) 0%, transparent),
-    radial-gradient(30% 40% at 55% 55%, var(--sunflower) 0%, transparent);
+    radial-gradient(20% 33% at 33% 66%, var(--pink) 0%, transparent),
+    radial-gradient(30% 33% at 66% 66%, var(--sunflower) 0%, transparent);
   background-position: center center;
 }
+.bg {
+  background-color: pink;
+}
 
-.who {
-  margin-top: 40px;
-  margin-bottom: 40px;
+.contact-link {
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.contact {
+  padding-top: 20px;
+}
+
+.contact-content {
+  margin-top: 30px;
+}
+.cta {
+  padding: 10px 20px 10px 20px;
+  border: 1px solid black;
+  border-radius: 40px;
+}
+
+.cta:hover {
+  transition: 300ms;
+  background-color: black;
+  color: white;
 }
 
 .display-font {
   font-family: "Tobias";
-  font-weight: 200;
 }
-
-.section {
-  margin-top: 5%;
-  margin-bottom: 5%;
+.em-2 {
+  font-family: "Roobert", Helvetica, sans-serif;
+  font-style: normal;
 }
-.sub-section {
-  margin-top: 5%;
-  margin-bottom: 5%;
+.em-2:hover {
+  padding-bottom: 2px;
+  border-bottom: 1px solid black;
 }
-.section-title {
-  font-family: "Tobias";
-  font-weight: 600;
-}
-.contact {
-  padding: 40px;
-  margin-top: 40px;
-}
-
 .logo {
   max-width: 40px;
   margin: 40px;
 }
-
-.space {
-  display: flex;
-  max-width: 1440px;
-  margin-right: auto;
+.fab {
+  padding: 10px;
+  margin-bottom: 10px;
 }
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -114,27 +147,39 @@ i {
 .nav-link:hover {
   color: inherit;
 }
-
-.work-writing-etc {
-  position: relative;
-  height: 1200px;
+.work {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.sub-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.section-title {
+  font-family: "Tobias";
+  font-weight: 600;
 }
 
-.w-w-e-content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 500px;
+.space {
+  display: flex;
+  max-width: 1440px;
+  margin-right: auto;
+}
+
+.who {
+  margin-top: 40px;
 }
 /* Animate-in */
 
 #name,
 #city,
 #objective,
-#results-2 {
+#results-2,
+#contact,
+#about,
+#background {
   opacity: 0;
   -webkit-animation: fadein 1s;
   -moz-animation: fadein 1s;
@@ -210,10 +255,19 @@ i {
   h1,
   h2 {
     font-size: 50px;
-    margin: 10px;
   }
   h3 {
     font-size: 32px;
+  }
+
+  .contact,
+  .about {
+    height: 400px;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  .about-me-content {
+    padding: 30px;
   }
   .logo {
     width: 30px;
@@ -222,13 +276,13 @@ i {
   .who {
     margin-top: 24px;
   }
-  .top {
+  #background {
     background: radial-gradient(
         35% 35% at 40% 40%,
         var(--periwinkle) 0%,
         transparent
       ),
-      radial-gradient(30% 20% at 40% 65%, var(--lilac) 0%, transparent),
+      radial-gradient(30% 20% at 40% 65%, var(--pink) 0%, transparent),
       radial-gradient(30% 20% at 60% 50%, var(--sunflower) 0%, transparent);
   }
 }
@@ -237,15 +291,11 @@ i {
   h1,
   h2 {
     font-size: 30px;
-    margin: 5px;
   }
 
   h3 {
     font-size: 20px;
-  }
-
-  .work-writing-etc {
-    height: 600px;
+    font-weight: bold;
   }
 
   .logo {
@@ -255,14 +305,25 @@ i {
 
   .who {
     margin-top: 38px;
+    padding: 20px;
   }
-  .top {
+  .work {
+    margin-top: 200px;
+    margin-bottom: 100px;
+    padding: 0px;
+  }
+
+  #background {
     background: radial-gradient(
-        40% 25% at 50% 40%,
+        50% 25% at 50% 40%,
         var(--periwinkle) 0%,
         transparent
       ),
-      radial-gradient(40% 25% at 30% 65%, var(--lilac) 0%, transparent),
-      radial-gradient(40% 25% at 70% 65%, var(--sunflower) 0%, transparent);
+      radial-gradient(50% 25% at 33% 66%, var(--pink) 0%, transparent),
+      radial-gradient(50% 25% at 66% 66%, var(--sunflower) 0%, transparent);
+  }
+  .home,
+  .work-link {
+    display: none;
   }
 }
